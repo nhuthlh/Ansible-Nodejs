@@ -1,6 +1,6 @@
 ---
 - name: Install node and npm
-  host: 172.31.14.180
+  hosts: 172.31.14.180
   tasks:
     - name: update apt repo and cache
       apt: 
@@ -13,7 +13,7 @@
           - nodejs
           - npm
 - name: Deploy nodejs app
-  host: 172.31.14.180
+  hosts: 172.31.14.180
   tasks:
     - name: Copy nodejs folder to a server
       copy:
