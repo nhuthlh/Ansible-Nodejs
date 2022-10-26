@@ -1,0 +1,29 @@
+---
+- name: Install node and npm
+  host: 172.31.14.180
+  tasks:
+    - name: update apt repo and cache
+      apt: 
+        update_cache: yes
+        force_apt_get: yes
+        cache_valid_time: 3600
+    - name: Install nodejs and npm
+      apt:
+        pkg:
+          - nodejs
+          - npm
+- name: Deploy nodejs app
+  host: 172.31.14.180
+  tasks:
+    - name: Copy nodejs folder to a server
+      copy:
+        repo: https://gitlab.com/devops-bootcamp3/simple-nodejs.git
+        dest: /root/
+    - name: Unpack the nodejs file
+      unarchive:
+        src: /root/nodejs-app-1.0.0.tgz
+        dest: /root/
+        remote_src: yes
+
+      
+
