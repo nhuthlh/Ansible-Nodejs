@@ -12,6 +12,7 @@
         pkg:
           - nodejs
           - npm
+      become: true
 - name: Deploy nodejs app
   hosts: 172.31.14.180
   tasks:
@@ -24,6 +25,7 @@
         src: /home/ubuntu/nodejs-app-1.0.0.tgz
         dest: /home/ubuntu/
         remote_src: yes
+      become: true
 
       
 
