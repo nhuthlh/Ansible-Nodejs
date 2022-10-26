@@ -18,11 +18,11 @@
     - name: Copy nodejs folder to a server
       copy:
         repo: https://gitlab.com/devops-bootcamp3/simple-nodejs.git
-        dest: /root/
+        dest: /home/ubuntu/
     - name: Unpack the nodejs file
       unarchive:
-        src: /root/nodejs-app-1.0.0.tgz
-        dest: /root/
+        src: /home/ubuntu/nodejs-app-1.0.0.tgz
+        dest: /home/ubuntu/
         remote_src: yes
 
       
