@@ -18,7 +18,7 @@
   tasks:
     - name: Copy nodejs folder to a server
       copy:
-        repo: /home/ubuntu/nodejs-app-1.0.0.tgz
+        src: /home/ubuntu/nodejs-app-1.0.0.tgz
         dest: /home/ubuntu/
     - name: Unpack the nodejs file
       unarchive:
